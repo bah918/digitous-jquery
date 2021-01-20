@@ -1,0 +1,15 @@
+.col-1{
+  border: 1px solid black;
+  width: 36px;
+  height: 36px;;
+}
+#sudoku{
+  margin-left:500px;
+
+}
+.btn{
+  margin:8px 0px 0px 600px;
+}
+body{
+  background-color: mediumaquamarine;
+}
