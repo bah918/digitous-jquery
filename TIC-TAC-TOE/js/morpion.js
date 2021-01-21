@@ -22,25 +22,31 @@ function remplirGrille(){
 function ordinateur(){
     for(var i = 0; i<3; i++){
             var j = 0;
-            if(grille[i][j]!=""){
-               return grille[i][j]="O";
+            if(grille[i][j]===""){
+               grille[i][j]="O";
+               console.log(grille);
+               return grille;
             }
             j++;
         }
+      
 }
 
 function personne(){
     for(var i = 0; i<3; i++){
             var j = 0;
-            if(grille[i][j]!=""){
-               return grille[i][j]="x";
+            if(grille[i][j]===""){
+                grille[i][j]="x";
+                console.log(grille);
+                return grille;
             }
             j++;
         }
+      
 }
 
 
-function gagneOrd(joueur){
+function gagneOrd(){
     var tab="";
   for(var i = 0; i<0; i++){
       for(var j = 0; j<0; j++){
@@ -72,7 +78,7 @@ function gagneOrd(joueur){
 }
 
 
-function gagnePersonne(joueur){
+function gagnePersonne(){
     var tab="";
   for(var i = 0; i<0; i++){
       for(var j = 0; j<0; j++){
@@ -102,28 +108,85 @@ function gagnePersonne(joueur){
   }  
 }
 
+
+
 function afficheGrille(){ 
-        $(document).ready(function(){
-          remplirGrille(); 
+        
+          //remplirGrille(); 
         var creerGrille = '<div class="container">';
         for(var i = 0; i<3; i++){
             creerGrille +=`<div id="row${i}" class="row">`;
             for(var j = 0; j<3; j++){
-                creerGrille +=`<div class="col${j}" class="col-1 case">${grille[i][j]}</div>`;
+                creerGrille +=`<div id="col${i}${j}" class="col-1 case">${grille[i][j]}</div>`;
             }
             creerGrille += '</div>';
         }
         creerGrille += '</div>';
-        $("#grille").html(creerGrille); 
-        });
+        $("#grille").html(creerGrille);
+        $("#col00").click(function(){
+        
+          grille[0][0]="x";
+          afficheGrille();
+      });
+      $("#colO1").click(function(){
+        
+        grille[0][1]="x";
+        afficheGrille();
+    });
+    $("#colO2").click(function(){
+        
+      grille[0][2]="x";
+      afficheGrille();
+  });
+  $("#col10").click(function(){
+        
+    grille[1][0]="x";
+    afficheGrille();
+});
+$("#col12").click(function(){
+        
+  grille[1][2]="x";
+  afficheGrille();
+});
+$("#col20").click(function(){
+        
+  grille[2][0]="x";
+  afficheGrille();
+});
+$("#col22").click(function(){
+        
+  grille[2][2]="x";
+  afficheGrille();
+});
+
+
+      
 }
 
 $(document).ready(function(){
-    
+      
     $(".btn").click(function(){
-    
       afficheGrille();
-        
+      
+    
+      
+      
+      
+      /* var ligne = Math.floor(Math.random()*grille.length);
+       var colonne = Math.floor(Math.random()*grille.length);
+       grille[ligne][colonne]="x";
+
+       for(var i =0; i<3; i++){
+         for(var j = 0; j<3; j++){
+           if(grille[i][j]===""){
+             grille[i][j]="0";
+             afficheGrille();
+             return;
+           }
+         }
+       }*/
+       
+      
     });
   });
 

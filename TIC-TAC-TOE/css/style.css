@@ -1,5 +1,16 @@
-.col-1{
+#col00, #col01, #col02,#col10,#col12,#col20,#col21,#col22{
     border: 1px solid black;
-    width: 36px;
-    height: 36px;;
+    width: 76px;
+    height: 76px;
   }
+
+  .container{
+    margin-left: 95.5;
+    margin-right: 113.5;
+    padding-left: 437px;
+  }
+  h3,.btn{
+    margin-left: 542px;
+    margin-top: 8px;
+
+  }  
